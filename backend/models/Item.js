@@ -22,6 +22,12 @@ const itemSchema = new mongoose.Schema(
       required: [true, "Description is required"],
       trim: true,
     },
+    discountPercentage: {
+      type: Number,
+      default: 0,
+      min: [0, "Discount percentage cannot be negative"],
+      max: [100, "Discount percentage cannot exceed 100"],
+    },
     imageUrl: {
       type: String,
       default: "",
